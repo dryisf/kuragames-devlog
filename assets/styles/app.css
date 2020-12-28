@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "glacial-indifference";
+  src: url("/build/fonts/glacial-indifference.regular.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #ffffff;
+  font-family: "glacial-indifference", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  background: url("/build/images/banniere.png");
+}
+
+.navbar {
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.title {
+  padding: 0 10px;
+}
+
+.title > p {
+  letter-spacing: 0.5em;
+}
+
+.menu {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.menu-item {
+  padding: 0 35px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.menu-item > span {
+  display: block;
+  font-weight: initial;
+  padding-top: 5px;
+  font-size: initial;
+}
+
+.social {
+  display: flex;
+  padding: 10px;
+}
+
+.social-item {
+  padding: 10px;
+}
+
+.social-item img {
+  width: 30px;
+}
+
+.waves {
+  background: url("/build/images/vague.png");
+  height: 75px;
+}
+
+/* MAIN CONTENT */
+
+.container {
+  display: flex;
+}
+
+.logs {
+  width: 70%;
+  background: blue;
+  height: 500px;
+}
+
+.comments {
+  background: black;
+  height: 500px;
+  width: 30%;
+}
+
+/* FOOTER */
+
+.footer {
+  background: url("/build/images/banniere.png");
+}
+
+.footer .waves {
+  transform: rotate(180deg);
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+}
+
+.copyright-item {
+  padding: 0 5px;
+}
+
+.copyright-item span {
+  font-size: initial;
+  font-weight: initial;
+}
+
+.footer .content {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navToTop {
+  font-weight: bold;
+  text-align: center;
+}
+
+.navToTop span {
+  display: block;
+  font-weight: initial;
+}
