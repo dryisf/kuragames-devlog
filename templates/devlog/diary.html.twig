@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <div class="logs">
+{% for article in articles %}
+    <div class="log">
+      <div class="log-header">
+        <img class="log-decoration" src="{{ asset('build/images/decoration.png') }}" alt="">
+        <div class="log-infos">
+          <h2 class="log-title">{{ article.title }}</h2>
+          <div class="metadata">{{ article.createdAt | date('Y/m/d H:i')}}</div>
+        </div>
+        <div class="log-translation"><button>Francé</button><button>Francé</button></div>
+      </div>
+      <div class="log-media"><img src="{{ article.image }}" alt=""></div>
+      <div class="log-text">{{ article.content | raw }}</div>
+      <div class="log-separator"></div>
+    </div>
+{% endfor %}
+  </div>
+
+  <div class="comments">
+  </div>
+{% endblock %}

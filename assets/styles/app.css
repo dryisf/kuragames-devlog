@@ -10,6 +10,7 @@
 
 body {
   color: #ffffff;
+  background: #333333;
   font-family: "glacial-indifference", sans-serif;
 }
 
@@ -50,15 +51,15 @@ a {
 .menu-item {
   padding: 0 35px;
   text-align: center;
+}
+
+.menu-item span {
   font-weight: bold;
   font-size: 20px;
 }
 
-.menu-item > span {
-  display: block;
-  font-weight: initial;
-  padding-top: 5px;
-  font-size: initial;
+.menu-item p {
+  margin-top: 5px;
 }
 
 .social {
@@ -66,11 +67,11 @@ a {
   padding: 10px;
 }
 
-.social-item {
+.social a {
   padding: 10px;
 }
 
-.social-item img {
+.social img {
   width: 30px;
 }
 
@@ -83,18 +84,68 @@ a {
 
 .container {
   display: flex;
+  justify-content: space-around;
 }
 
+/* LOGS */
+
 .logs {
-  width: 70%;
-  background: blue;
-  height: 500px;
+  width: 60%;
 }
+
+.log {
+  padding: 25px;
+}
+
+.log-header {
+  display: flex;
+}
+
+.log-header > * {
+  padding: 0 10px;
+}
+
+.log-decoration {
+  width: 100px;
+}
+
+.log-media > * {
+  max-width: 100%;
+  padding: 15px 0;
+}
+
+.log-text {
+  text-align: justify;
+}
+
+.log-separator {
+  height: 10px;
+  margin-top: 20px;
+  background: url("/build/images/separation.png");
+}
+
+/* COMMENTS */
 
 .comments {
   background: black;
   height: 500px;
   width: 30%;
+}
+
+/* FORM */
+.form-wrapper {
+  /* width: 100%; */
+  margin: 20px 0;
+}
+
+.form-group > div {
+  display: flex;
+  flex-direction: column;
+}
+
+#form_content {
+  height: 100px;
+  width: 700px;
 }
 
 /* FOOTER */
@@ -116,9 +167,8 @@ a {
   padding: 0 5px;
 }
 
-.copyright-item span {
-  font-size: initial;
-  font-weight: initial;
+.copyright-text h2 {
+  display: inline-block;
 }
 
 .footer .content {
@@ -129,11 +179,5 @@ a {
 }
 
 .navToTop {
-  font-weight: bold;
   text-align: center;
-}
-
-.navToTop span {
-  display: block;
-  font-weight: initial;
 }

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}KURAGAMES GAMEDEVLOG{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -13,15 +13,15 @@
                 <div class="title"><h1>KURAGAMES</h1>
                 <p>GAMEDEVLOG</p></div>
                 <ul class="menu">
-                    <a href="#"><li class="menu-item">DIARY <span>Journal</span></li></a>
-                    <a href="#"><li class="menu-item">ABOUT <span>A propos</span></li></a>
-                    <a href="#"><li class="menu-item">MAIN HOME <span>Accueil principal</span></li></a>
+                    <a href="{{ path('diary') }}"><li class="menu-item"><span>DIARY</span><p>Journal</p></li></a>
+                    <a href="{{ path('diary_create') }}"><li class="menu-item"><span>ABOUT</span><p>A propos</p></li></a>
+                    <a href="#"><li class="menu-item"><span>MAIN HOME</span><p>Accueil Principal</p></li></a>
                 </ul>
                 <div class="social">
-                    <a href="#" class="social-item"><img class="banner" src="{{ asset('build/images/facebooklogo.png') }}" alt=""></a>
-                    <a href="#" class="social-item"><img class="banner" src="{{ asset('build/images/instalogo.png') }}" alt=""></a>
-                    <a href="#" class="social-item"><img class="banner" src="{{ asset('build/images/twitterlogo.png') }}" alt=""></a>
-                    <a href="#" class="social-item"><img class="banner" src="{{ asset('build/images/youtubelogo.png') }}" alt=""></a>
+                    <a href="https://www.facebook.com/kuragames" target="_blank"><img class="banner" src="{{ asset('build/images/facebooklogo.png') }}" alt=""></a>
+                    <a href="https://www.instagram.com/artcyan" target="_blank"><img class="banner" src="{{ asset('build/images/instalogo.png') }}" alt=""></a>
+                    <a href="https://twitter.com/Artcyan" target="_blank"><img class="banner" src="{{ asset('build/images/twitterlogo.png') }}" alt=""></a>
+                    <a href="https://www.youtube.com/channel/UCaT6phPffFK2hugl8zozytw" target="_blank"><img class="banner" src="{{ asset('build/images/youtubelogo.png') }}" alt=""></a>
                 </div>
             </div>
             <div class="waves"></div>
@@ -33,17 +33,23 @@
         {% endblock %}
         </div>
         <div class="footer">
-        <div class="waves"></div>
-        <div class="content">
-            <div class="copyright">
-                <img src="{{ asset('build/images/artcyanlogo.png') }}" alt=""  class="copyright-item">
-                <div class="copyright-item">
-                <h2>KURAGAMES <span>GAMEDEVLOG</span></h2>
-                <p>Copyright Artcyan All Rights Reserved</p>
+            <div class="waves"></div>
+            <div class="content">
+                <div class="copyright">
+                    <img src="{{ asset('build/images/artcyanlogo.png') }}" alt=""  class="copyright-item">
+                    <div class="copyright-item copyright-text">
+                            <h2>KURAGAMES</h2>
+                            GAMEDEVLOG
+                        <p>Copyright Artcyan All Rights Reserved</p>
+                    </div>
+                </div>
+                <div class="navToTop">
+                    <a href="#">
+                        <h2>TOP</h2>
+                        <p>Haut de la page</p>
+                    </a>
                 </div>
             </div>
-            <div class="navToTop"><a href="#"><p>TOP <span>Haut de la page</span></p></a></div>
-        </div>
         </div>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

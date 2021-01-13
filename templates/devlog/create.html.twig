@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="form-wrapper">
+  <h1>{% if editMode %}
+  Modification
+  {% else %}
+  Création
+  {% endif %} d'un article</h1>
+
+  {{ form_start(formArticle) }}
+
+  <div class="form-group">
+  {{form_row(formArticle.title, {'attr': {'placeholder': "Titre de l'article"}})}}
+  </div>
+
+  <div class="form-group">
+  {{form_row(formArticle.content, {'attr': {'placeholder': "Contenu de l'article"}})}}
+  </div>
+
+  <div class="form-group">
+  {{form_row(formArticle.image, {'attr': {'placeholder': "Image de l'article"}})}}
+  </div>
+
+  <button type="submit" class ="btn-submit">
+  {% if editMode %}
+  Enregistrer les modifications
+  {% else %}
+  Ajouter l'article
+  {% endif %}
+  </button>
+
+  {{ form_end(formArticle) }}
+</div>
+{% endblock %}
