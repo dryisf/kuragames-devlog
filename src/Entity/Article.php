@@ -28,6 +28,11 @@ class Article
     private $content;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $contentEnglish;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $image;
@@ -36,6 +41,16 @@ class Article
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $upload;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $video;
 
     public function getId(): ?int
     {
@@ -86,6 +101,42 @@ class Article
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpload(): ?string
+    {
+        return $this->upload;
+    }
+
+    public function setUpload(?string $upload): self
+    {
+        $this->upload = $upload;
+
+        return $this;
+    }
+
+    public function getContentEnglish(): ?string
+    {
+        return $this->contentEnglish;
+    }
+
+    public function setContentEnglish(string $contentEnglish): self
+    {
+        $this->contentEnglish = $contentEnglish;
+
+        return $this;
+    }
+
+    public function getVideo(): ?string
+    {
+        return $this->video;
+    }
+
+    public function setVideo(?string $video): self
+    {
+        $this->video = $video;
 
         return $this;
     }

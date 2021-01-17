@@ -1,24 +1,120 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block body %}
+<div class="row">
+  <div class="logs col-12 col-lg-9">
+    {% for article in articles %}
+    <div class="log my-4">
 
-{% block body %}
-  <div class="logs">
-{% for article in articles %}
-    <div class="log">
-      <div class="log-header">
-        <img class="log-decoration" src="{{ asset('build/images/decoration.png') }}" alt="">
-        <div class="log-infos">
-          <h2 class="log-title">{{ article.title }}</h2>
+      <div class="row align-items-end">
+        <img class="col-auto" src="{{ asset('build/images/decoration.png') }}" alt="Dessin d'une fleur" />
+        <div class="log-infos col-auto">
+          <div class="h1 font-weight-bold">{{ article.title }}</div>
           <div class="metadata">{{ article.createdAt | date('Y/m/d H:i')}}</div>
         </div>
-        <div class="log-translation"><button>Francé</button><button>Francé</button></div>
+        <div class="text-uppercase d-flex flex-wrap col-auto justify-content-center">
+          <div class="d-flex justify-content-center flex-wrap">
+            <button class="display-english text-uppercase mx-1 mt-2 px-5 py-1">English</button>
+            <button class="display-french text-uppercase mx-1 mt-2 px-5 py-1">Français</button>
+          </div>
+          {% if app.user %}
+          <div class="d-flex justify-content-center flex-wrap">
+            <a href="{{ path('diary_edit', { id: article.id }) }}"><button class="text-uppercase mx-1  mt-2 px-5 py-1">
+                Editer
+              </button></a>
+            <a href="{{ path('diary_delete', { id: article.id }) }}"><button
+                class="text-uppercase mx-1  mt-2 px-5 py-1">
+                Supprimer
+              </button></a>
+          </div>
+          {% endif %}
+        </div>
       </div>
-      <div class="log-media"><img src="{{ article.image }}" alt=""></div>
-      <div class="log-text">{{ article.content | raw }}</div>
-      <div class="log-separator"></div>
+      {% if article.video %}
+      <div class="embed-responsive embed-responsive-16by9 my-3">
+        <iframe class="embed-responsive-item"
+          src="{{ "https://www.youtube.com/embed/" ~ article.video | youtube }}"></iframe>
+      </div>
+      {% endif %}
+      {% if article.upload %}
+      <img class="img-fluid my-3" src="{{ asset('build/uploads/' ~ article.upload) }}" alt="Image de l'article" />
+      {% endif %}
+      <div class="text-justify content-english">
+        {{ article.contentEnglish | raw }}
+      </div>
+      <div class="text-justify content-french hidden">
+        {{ article.content | raw }}
+      </div>
+      <div class="separator mt-4"></div>
     </div>
-{% endfor %}
-  </div>
+    {% endfor %}
 
-  <div class="comments">
+    <div class="d-flex justify-content-center">
+      {% if articlePage > 1 %}
+      <div class="scroll-arrow reverse">
+        <a href="/diary?logs={{articlePage - 1}}&comments={{ commentPage }}"><img
+            src="{{ asset('build/images/flechedefilement.png') }}" alt="Flèche de défilement"></a>
+      </div>
+      {% endif %}
+      {% if ( totalArticles|length - articlePage * articlesPerPage ) > 0 %}
+      <div class="scroll-arrow">
+        <a href="/diary?logs={{articlePage + 1}}&comments={{ commentPage }}"><img
+            src="{{ asset('build/images/flechedefilement.png') }}" alt="Flèche de défilement"></a>
+      </div>
+      {% endif %}
+    </div>
   </div>
+  <div class="comments col-12 col-lg-3 pt-4 mb-4">
+    <div class="form-wrapper comment-form">
+      <div class="text-uppercase text-center h3 font-weight-bold">
+        Comment section
+      </div>
+
+      {{ form_start(formComment) }}
+
+      <div class="form-group">
+        {% if app.user %}
+        {{form_widget(formComment.author, {'attr': {'placeholder': "Name", 'value':'Artcyan'
+        }})}}
+        {% else %}
+        {{form_widget(formComment.author, {'attr': {'placeholder': "Name"
+      }})}}
+        {% endif %}
+
+      </div>
+
+      <div class="form-group">
+        {{ form_widget(formComment.content, {'attr': {'placeholder': "Comment"
+        }}) }}
+      </div>
+
+      <button type="submit" class="font-weight-bold">
+        POST
+      </button>
+      {{ form_end(formComment) }}
+    </div>
+    {% for comment in comments %}
+    <div class="comment mt-4 {% if comment.isVerified %}is-verified{% endif %}">
+      <div class="font-weight-bold comment-author">{% if comment.isVerified %}<img
+          src="{{ asset('build/images/artcyanlogo.png') }}" alt="Logo de Artcyan" width="30" />{% endif %}
+        {{ comment.author }} </div>
+      <p class="text-justify comment-content">{{ comment.content }}</p>
+      <div class="separator mt-4"></div>
+
+    </div>
+    {% endfor %}
+    <div class="d-flex justify-content-center">
+      {% if commentPage > 1 %}
+      <div class="scroll-arrow reverse">
+        <a href="/diary?logs={{articlePage}}&comments={{ commentPage - 1 }}"><img
+            src="{{ asset('build/images/flechedefilement.png') }}" alt="Flèche de défilement"></a>
+      </div>
+      {% endif %}
+      {% if ( totalComments|length - commentPage * commentsPerPage ) > 0 %}
+      <div class="scroll-arrow">
+        <a href="/diary?logs={{articlePage}}&comments={{ commentPage + 1 }}"><img
+            src="{{ asset('build/images/flechedefilement.png') }}" alt="Flèche de défilement"></a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
 {% endblock %}

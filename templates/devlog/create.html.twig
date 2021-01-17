@@ -1,33 +1,59 @@
-{% extends "base.html.twig" %}
-
-{% block body %}
+{% extends "base.html.twig" %} {% block body %}
 <div class="form-wrapper">
-  <h1>{% if editMode %}
-  Modification
-  {% else %}
-  Création
-  {% endif %} d'un article</h1>
+  <h1>
+    {% if editMode %} Modification {% else %} Création {% endif %} d'un article
+  </h1>
 
   {{ form_start(formArticle) }}
 
   <div class="form-group">
-  {{form_row(formArticle.title, {'attr': {'placeholder': "Titre de l'article"}})}}
+    {{form_widget(formArticle.title, {'attr': {'placeholder': "Titre de l'article"
+
+
+    }})}}
   </div>
 
   <div class="form-group">
-  {{form_row(formArticle.content, {'attr': {'placeholder': "Contenu de l'article"}})}}
+    {{ form_widget(formArticle.upload, {'attr': {'placeholder': "Image de l'article (facultatif)"
+
+
+
+    }}) }}
   </div>
 
   <div class="form-group">
-  {{form_row(formArticle.image, {'attr': {'placeholder': "Image de l'article"}})}}
+    {{ form_widget(formArticle.video, {'attr': {'placeholder': "Lien d'une vidéo YouTube (facultatif)"
+
+
+
+
+    }}) }}
   </div>
 
-  <button type="submit" class ="btn-submit">
-  {% if editMode %}
-  Enregistrer les modifications
-  {% else %}
-  Ajouter l'article
-  {% endif %}
+  <div class="form-group">
+    {{form_widget(formArticle.content, {'attr': {'placeholder': "Contenu de l'article"
+
+
+
+
+
+    }})}}
+  </div>
+
+  <div class="form-group">
+    {{form_widget(formArticle.content_english, {'attr': {'placeholder': "Contenu de l'article en anglais"
+
+
+
+
+
+
+    }})}}
+  </div>
+
+  <button type="submit" class="btn btn-success mb-5">
+    {% if editMode %} Enregistrer les modifications {% else %} Ajouter l'article
+    {% endif %}
   </button>
 
   {{ form_end(formArticle) }}

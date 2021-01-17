@@ -1,0 +1,149 @@
+@import "~bootstrap/scss/bootstrap";
+
+@font-face {
+  font-family: "glacial-indifference";
+  src: url("/build/fonts/glacial-indifference.regular.otf");
+}
+
+body {
+  background: #333333;
+  font-family: "glacial-indifference", sans-serif;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+
+  &:hover {
+    color: yellow;
+  }
+}
+
+button {
+  border: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header,
+.footer {
+  background: #bb0000;
+}
+
+.waves {
+  background: url("/build/images/vague.png");
+  height: 75px;
+}
+
+.separator {
+  height: 10px;
+  background: url("/build/images/separation.png");
+}
+
+.scroll-arrow {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  cursor: pointer;
+
+  &.reverse {
+    transform: rotate(180deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.header {
+  img {
+    width: 100%;
+  }
+
+  .navbar {
+    .subtitle {
+      letter-spacing: 8px;
+    }
+    .navbar-toggler {
+      border-color: #ffffff;
+    }
+
+    .social {
+      img {
+        width: 40px;
+      }
+    }
+  }
+}
+
+.footer {
+  .waves {
+    transform: rotate(180deg);
+  }
+
+  .navToTop {
+    cursor: pointer;
+    &:hover {
+      color: yellow;
+    }
+  }
+}
+
+.logs {
+  .log {
+    button {
+      color: #ffffff;
+      background: #bb0000;
+      border-radius: 20px;
+
+      &:hover {
+        color: yellow;
+      }
+    }
+  }
+}
+
+.comments {
+  .is-verified {
+  }
+
+  .comment {
+    font-size: 20px;
+
+    &.is-verified {
+      .comment-author {
+        color: yellow;
+      }
+    }
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+
+    button,
+    textarea,
+    input {
+      background: #3a3a3a;
+      padding: 6px;
+      border: 1px solid #bb0000;
+      color: #bb0000;
+
+      &:hover {
+        background: #7f7b7b;
+      }
+    }
+
+    textarea,
+    input {
+      &::placeholder {
+        color: #bb0000;
+      }
+    }
+  }
+}
