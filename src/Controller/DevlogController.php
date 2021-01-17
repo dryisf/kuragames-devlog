@@ -32,11 +32,19 @@ class DevlogController extends AbstractController
     }
 
     /**
-     * @Route("/", name="home")
+     * @Route("/", name="index")
      */
     public function index(): Response
     {
         return $this->redirectToRoute('diary');
+    }
+
+    /**
+     * @Route("/home", name="home")
+     */
+    public function home(): Response
+    {
+        return $this->render('devlog/home.html.twig');
     }
 
     /**
@@ -116,7 +124,7 @@ class DevlogController extends AbstractController
                         $newFilename
                     );
                 } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
+                    echo "Erreur lors de l'upload du fichier : ", $e;
                 }
                 $article->setUpload($newFilename);
             }
@@ -150,13 +158,20 @@ class DevlogController extends AbstractController
         ]);
     }
 
-     /**
-     * @Route("/diary/{id}/delete", name="diary_delete")
-     */
+    /**
+    * @Route("/diary/{id}/delete", name="diary_delete")
+    */
     public function delete(Article $article = null, Request $request, EntityManagerInterface $manager){
             $manager->remove($article);
             $manager->flush();
 
             return $this->redirectToRoute('diary');
+    }
+
+    /**
+     * @Route("/about", name="about")
+     */
+    public function about(){
+        return $this->render('devlog/about.html.twig');
     }
 }

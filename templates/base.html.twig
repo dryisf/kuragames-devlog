@@ -43,19 +43,21 @@
             <div class="top-nav d-lg-flex">
               <li class="nav-item px-3 text-center text-nowrap">
                 <a class="nav-link" href="{{ path('diary') }}"
-                  ><span class="font-weight-bold h3">DIARY</span>
+                  ><span class="font-weight-bold text-uppercase h3">Diary</span>
                   <span class="d-block mt-2">Journal</span></a
                 >
               </li>
               <li class="nav-item px-3 text-center text-nowrap">
-                <a class="nav-link" href="#"
-                  ><span class="font-weight-bold h3">ABOUT</span>
+                <a class="nav-link" href="{{ path('about') }}"
+                  ><span class="font-weight-bold text-uppercase h3">About</span>
                   <span class="d-block mt-2">A propos</span></a
                 >
               </li>
               <li class="nav-item px-3 text-center text-nowrap">
-                <a class="nav-link" href="#"
-                  ><span class="font-weight-bold h3">MAIN HOME</span>
+                <a class="nav-link" href="{{ path('home') }}"
+                  ><span class="font-weight-bold text-uppercase h3"
+                    >Main Home</span
+                  >
                   <span class="d-block mt-2">Accueil Principal</span></a
                 >
               </li>
@@ -64,13 +66,17 @@
             <div class="bot-nav d-lg-flex">
               <li class="nav-item px-3 text-center text-nowrap">
                 <a class="nav-link" href="{{ path('diary_create') }}"
-                  ><span class="font-weight-bold h3">CREATE ARTICLE</span>
+                  ><span class="font-weight-bold text-uppercase h3"
+                    >Create Article</span
+                  >
                   <span class="d-block mt-2">Créer un article</span></a
                 >
               </li>
               <li class="nav-item px-3 text-center text-nowrap">
                 <a class="nav-link" href="{{ path('app_logout') }}"
-                  ><span class="font-weight-bold h3">LOGOUT</span>
+                  ><span class="font-weight-bold text-uppercase h3"
+                    >Logout</span
+                  >
                   <span class="d-block mt-2">Se déconnecter</span></a
                 >
               </li>

@@ -1,0 +1,87 @@
+{% extends "base.html.twig" %} {% block body %}
+
+<div class="about d-flex flex-column align-items-center">
+  <div class="h2 text-uppercase font-weight-bold mt-5">The Project</div>
+  <img
+    class="img-fluid"
+    src="{{ asset('build/images/kuramamodel.png') }}"
+    alt="Kurama"
+  />
+  <p class="text-center">
+    Project FOXY is a 2.5D solo platformer game where you follow the adventure
+    of a Yokai Fox named Kurama accross four Islands cursed by the four seasons.
+  </p>
+  <div class="h2 text-uppercase font-weight-bold mt-5">Four Islands</div>
+  <div class="h2 text-uppercase font-weight-bold">Four Curses</div>
+  <div class="d-flex flex-wrap justify-content-around">
+    <div class="season p-5">
+      <img src="{{ asset('build/images/springlogo.png') }}" alt="" />
+      <span class="text-uppercase text-center d-block">Spring</span>
+    </div>
+    <div class="season p-5">
+      <img src="{{ asset('build/images/summerlogo.png') }}" alt="" />
+      <span class="text-uppercase text-center d-block">Summer</span>
+    </div>
+    <div class="season p-5">
+      <img src="{{ asset('build/images/autumnlogo.png') }}" alt="" />
+      <span class="text-uppercase text-center d-block">Autumn</span>
+    </div>
+    <div class="season p-5">
+      <img src="{{ asset('build/images/winterlogo.png') }}" alt="" />
+      <span class="text-uppercase text-center d-block">Winter</span>
+    </div>
+  </div>
+  <p class="text-center">
+    The game contains four Islands to explore. Each Island is cursed with a
+    specific season. <br />
+    These Islands are composed of an hub world an four platforms level. Explore
+    levels, help people, resolve little quests and free each Island from its
+    curse.
+  </p>
+  <div class="h2 text-uppercase font-weight-bold mt-5">Universe</div>
+  <img
+    class="img-fluid my-3"
+    src="{{ asset('build/images/winterimage.png') }}"
+    alt="Winter Island"
+  />
+  <p class="text-center">
+    It is a stylized cartoon game in a East Asian Universe. The game take its
+    inspiration in games like Mario, Donkey Kong, Ori, Yooka Laylee, Sonic
+    Colors, Goemon's Great Adventure, etc.
+  </p>
+  <div class="h2 text-uppercase font-weight-bold mt-5">Unreal Engine</div>
+  <img
+    class="img-fluid my-3"
+    src="{{ asset('build/images/unrealnode.png') }}"
+    alt="Winter Island"
+  />
+  <p class="text-center">
+    The Game is made with Unreal Engine 4. Thanks to many functionalities and
+    the great community of the 3D Engine, the process of making game is quick
+    and simplified.
+  </p>
+  <div class="h2 text-uppercase font-weight-bold mt-5">Intended Platforms</div>
+  <p class="text-center">
+    The Game is still in development and will be released on mobile platforms
+    and Nintendo Switch.
+  </p>
+  <div class="d-flex flex-wrap justify-content-center">
+    <div class="platform p-5">
+      <img
+        src="{{ asset('build/images/androidlogo.png') }}"
+        alt="Android Logo"
+      />
+    </div>
+    <div class="platform p-5">
+      <img
+        src="{{ asset('build/images/switchlogo.png') }}"
+        alt="Nintendo Switch Logo"
+      />
+    </div>
+    <div class="platform p-5">
+      <img src="{{ asset('build/images/iOSlogo.png') }}" alt="iOS Logo" />
+    </div>
+  </div>
+</div>
+
+{% endblock %}
