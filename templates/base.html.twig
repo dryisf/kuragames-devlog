@@ -12,7 +12,13 @@
 
   <body>
     <div class="header">
-      <nav class="navbar navbar-expand-lg justify-content-center">
+      <nav
+        class="navbar navbar-expand-lg justify-content-center justify-content-sm-between"
+      >
+        <div class="d-flex flex-column text-uppercase h1 d-lg-none">
+          <span class="bold">Kuragames</span
+          ><span class="d-block h4 subtitle">Gamedevlog</span>
+        </div>
         <button
           class="navbar-toggler text-center"
           type="button"
@@ -23,41 +29,35 @@
           aria-label="Toggle navigation"
         >
           <img
-            src="{{ asset('build/images/artcyanlogo.png') }}"
-            alt="Logo de Artcyan"
+            src="{{ asset('build/images/toggleicon.png') }}"
+            alt="Menu toggle"
+            class="toggle-icon mb-2"
           />
         </button>
-        <div
-          class="collapse navbar-collapse justify-content-between"
-          id="navbarSupportedContent"
-        >
-          <div
-            class="d-flex flex-column align-items-center align-items-lg-start mt-3 mt-lg-0 text-uppercase h1"
-          >
-            <span class="font-weight-bold">Kuragames</span
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="flex-column d-none d-lg-flex text-uppercase h1">
+            <span class="bold">Kuragames</span
             ><span class="d-block h4 subtitle">Gamedevlog</span>
           </div>
           <ul
-            class="navbar-nav d-lg-flex flex-column flex-xl-row align-items-center"
+            class="navbar-nav menu d-lg-flex flex-column flex-xl-row align-items-center"
           >
             <div class="top-nav d-lg-flex">
               <li class="nav-item px-3 text-center text-nowrap">
                 <a class="nav-link" href="{{ path('diary') }}"
-                  ><span class="font-weight-bold text-uppercase h3">Diary</span>
+                  ><span class="bold text-uppercase h3">Diary</span>
                   <span class="d-block mt-2">Journal</span></a
                 >
               </li>
               <li class="nav-item px-3 text-center text-nowrap">
                 <a class="nav-link" href="{{ path('about') }}"
-                  ><span class="font-weight-bold text-uppercase h3">About</span>
+                  ><span class="bold text-uppercase h3">About</span>
                   <span class="d-block mt-2">A propos</span></a
                 >
               </li>
               <li class="nav-item px-3 text-center text-nowrap">
                 <a class="nav-link" href="{{ path('home') }}"
-                  ><span class="font-weight-bold text-uppercase h3"
-                    >Main Home</span
-                  >
+                  ><span class="bold text-uppercase h3">Main Home</span>
                   <span class="d-block mt-2">Accueil Principal</span></a
                 >
               </li>
@@ -66,56 +66,40 @@
             <div class="bot-nav d-lg-flex">
               <li class="nav-item px-3 text-center text-nowrap">
                 <a class="nav-link" href="{{ path('diary_create') }}"
-                  ><span class="font-weight-bold text-uppercase h3"
-                    >Create Article</span
-                  >
+                  ><span class="bold text-uppercase h3">Create Article</span>
                   <span class="d-block mt-2">Créer un article</span></a
                 >
               </li>
               <li class="nav-item px-3 text-center text-nowrap">
                 <a class="nav-link" href="{{ path('app_logout') }}"
-                  ><span class="font-weight-bold text-uppercase h3"
-                    >Logout</span
-                  >
+                  ><span class="bold text-uppercase h3">Logout</span>
                   <span class="d-block mt-2">Se déconnecter</span></a
                 >
               </li>
             </div>
             {% endif %}
           </ul>
-          <div class="social p-2 text-center">
+          <div class="social p-2 text-center ml-auto">
             <a
               class="px-2"
               href="https://www.facebook.com/kuragames"
               target="_blank"
-              ><img
-                class="banner"
-                src="{{ asset('build/images/facebooklogo.png') }}"
-                alt=""
+              ><img src="{{ asset('build/images/facebooklogo.png') }}" alt=""
             /></a>
             <a
               class="px-2"
               href="https://www.instagram.com/artcyan"
               target="_blank"
-              ><img
-                class="banner"
-                src="{{ asset('build/images/instalogo.png') }}"
-                alt=""
+              ><img src="{{ asset('build/images/instalogo.png') }}" alt=""
             /></a>
             <a class="px-2" href="https://twitter.com/Artcyan" target="_blank"
-              ><img
-                class="banner"
-                src="{{ asset('build/images/twitterlogo.png') }}"
-                alt=""
+              ><img src="{{ asset('build/images/twitterlogo.png') }}" alt=""
             /></a>
             <a
               class="px-2"
               href="https://www.youtube.com/channel/UCaT6phPffFK2hugl8zozytw"
               target="_blank"
-              ><img
-                class="banner"
-                src="{{ asset('build/images/youtubelogo.png') }}"
-                alt=""
+              ><img src="{{ asset('build/images/youtubelogo.png') }}" alt=""
             /></a>
           </div>
         </div>
@@ -123,12 +107,15 @@
 
       <div class="waves"></div>
       <img
+        class="banner"
         src="{{ asset('build/images/imagebanniere.png') }}"
         alt="Image d'un jeu"
       />
     </div>
 
-    <div class="container-fluid mt-3">{% block body %} {% endblock %}</div>
+    <div class="main-content-wrapper container-fluid mt-3">
+      {% block body %} {% endblock %}
+    </div>
 
     <div class="footer">
       <div class="waves"></div>
@@ -143,14 +130,14 @@
           />
           <div class="ml-2">
             <div class="text-uppercase">
-              <span class="h2 font-weight-bold">Kuragames</span>
+              <span class="h2 bold">Kuragames</span>
               <span class="h5">Gamedevlog</span>
             </div>
             <span class="d-block">Copyright Artcyan All Rights Reserved</span>
           </div>
         </div>
         <div class="navToTop text-center mx-4">
-          <span class="h2 font-weight-bold">TOP</span>
+          <span class="h2 bold">TOP</span>
           <span class="d-block">Haut de la page</span>
         </div>
       </div>

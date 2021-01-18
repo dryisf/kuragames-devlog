@@ -5,11 +5,18 @@
   src: url("/build/fonts/glacial-indifference.regular.otf");
 }
 
+@font-face {
+  font-family: "glacial-indifference-bold";
+  src: url("/build/fonts/glacial-indifference.bold.otf");
+}
+
 body {
   background: #333333;
   font-family: "glacial-indifference", sans-serif;
   min-height: 100vh;
   color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -28,6 +35,10 @@ button {
 * {
   margin: 0;
   padding: 0;
+}
+
+.bold {
+  font-family: "glacial-indifference-bold", sans-serif;
 }
 
 .header,
@@ -62,6 +73,10 @@ button {
 }
 
 .header {
+  .banner {
+    border: 1px solid #ffffff;
+  }
+
   img {
     width: 100%;
   }
@@ -71,7 +86,21 @@ button {
       letter-spacing: 8px;
     }
     .navbar-toggler {
-      border-color: #ffffff;
+      border: none;
+    }
+
+    .toggle-icon {
+      width: 100px;
+    }
+
+    .menu {
+      margin-left: 0;
+    }
+
+    @media (min-width: 1290px) {
+      .menu {
+        margin-left: 225px;
+      }
     }
 
     .social {
@@ -80,6 +109,10 @@ button {
       }
     }
   }
+}
+
+.main-content-wrapper {
+  flex: 1;
 }
 
 .footer {
@@ -105,6 +138,10 @@ button {
       &:hover {
         color: yellow;
       }
+    }
+
+    .log-upload {
+      width: 100%;
     }
   }
 }

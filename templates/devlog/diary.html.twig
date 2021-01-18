@@ -5,9 +5,9 @@
     <div class="log my-4">
 
       <div class="row align-items-end">
-        <img class="col-auto" src="{{ asset('build/images/decoration.png') }}" alt="Dessin d'une fleur" />
+        <img class="align-self-center col-auto" src="{{ asset('build/images/decoration.png') }}" alt="Dessin d'une fleur" />
         <div class="log-infos col-auto">
-          <div class="h1 font-weight-bold">{{ article.title }}</div>
+          <div class="h1 bold">{{ article.title }}</div>
           <div class="metadata">{{ article.createdAt | date('Y/m/d H:i')}}</div>
         </div>
         <div class="text-uppercase d-flex flex-wrap col-auto justify-content-center">
@@ -35,7 +35,7 @@
       </div>
       {% endif %}
       {% if article.upload %}
-      <img class="img-fluid my-3" src="{{ asset('build/uploads/' ~ article.upload) }}" alt="Image de l'article" />
+      <img class="img-fluid my-3 log-upload" src="{{ asset('build/uploads/' ~ article.upload) }}" alt="Image de l'article" />
       {% endif %}
       <div class="text-justify content-english">
         {{ article.contentEnglish | raw }}
@@ -64,7 +64,7 @@
   </div>
   <div class="comments col-12 col-lg-3 pt-4 mb-4">
     <div class="form-wrapper comment-form">
-      <div class="text-uppercase text-center h3 font-weight-bold">
+      <div class="text-uppercase text-center h3 bold">
         Comment section
       </div>
 
@@ -86,14 +86,14 @@
         }}) }}
       </div>
 
-      <button type="submit" class="font-weight-bold">
+      <button type="submit" class="bold">
         POST
       </button>
       {{ form_end(formComment) }}
     </div>
     {% for comment in comments %}
     <div class="comment mt-4 {% if comment.isVerified %}is-verified{% endif %}">
-      <div class="font-weight-bold comment-author">{% if comment.isVerified %}<img
+      <div class="bold comment-author">{% if comment.isVerified %}<img
           src="{{ asset('build/images/artcyanlogo.png') }}" alt="Logo de Artcyan" width="30" />{% endif %}
         {{ comment.author }} </div>
       <p class="text-justify comment-content">{{ comment.content }}</p>
