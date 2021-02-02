@@ -1,16 +1,15 @@
 {% extends 'base.html.twig' %} {% block body %}
-<div class="row">
-  <div class="logs col-12 col-lg-9">
+  <div class="logs">
     {% for article in articles %}
     <div class="log my-4">
 
-      <div class="row align-items-end">
-        <img class="align-self-center col-auto" src="{{ asset('build/images/decoration.png') }}" alt="Dessin d'une fleur" />
-        <div class="log-infos col-auto">
+      <div class="d-flex align-items-end">
+        <img class="align-self-center mr-3 col-auto" src="{{ asset('build/images/decoration.png') }}" alt="Dessin d'une fleur" />
+        <div class="log-infos">
           <div class="h1 bold">{{ article.title }}</div>
           <div class="metadata">{{ article.createdAt | date('Y/m/d H:i')}}</div>
         </div>
-        <div class="text-uppercase d-flex flex-wrap col-auto justify-content-center">
+        <div class="text-uppercase d-flex flex-column col-auto">
           <div class="d-flex justify-content-center flex-wrap">
             <button class="display-english text-uppercase mx-1 mt-2 px-5 py-1">English</button>
             <button class="display-french text-uppercase mx-1 mt-2 px-5 py-1">Français</button>
@@ -35,7 +34,7 @@
       </div>
       {% endif %}
       {% if article.upload %}
-      <img class="img-fluid my-3 log-upload" src="{{ asset('build/uploads/' ~ article.upload) }}" alt="Image de l'article" />
+        <img class="log-upload my-3" src="{{ asset('build/uploads/' ~ article.upload) }}" alt="Image de l'article" />
       {% endif %}
       <div class="text-justify content-english">
         {{ article.contentEnglish | raw }}
@@ -62,7 +61,7 @@
       {% endif %}
     </div>
   </div>
-  <div class="comments col-12 col-lg-3 pt-4 mb-4">
+  <div class="comments pt-4 mb-4">
     <div class="form-wrapper comment-form">
       <div class="text-uppercase text-center h3 bold">
         Comment section
@@ -116,5 +115,4 @@
       {% endif %}
     </div>
   </div>
-</div>
 {% endblock %}

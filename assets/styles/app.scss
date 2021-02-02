@@ -13,6 +13,8 @@
 body {
   background: #333333;
   font-family: "glacial-indifference", sans-serif;
+  display: flex;
+  justify-content: center;
   min-height: 100vh;
   color: #ffffff;
   display: flex;
@@ -112,7 +114,20 @@ button {
 }
 
 .main-content-wrapper {
+  align-self: center;
   flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+  @media (min-width: 1920px) {
+    width: 1920px;
+  }
+
+  @media (min-width: 1500px) {
+    justify-content: space-around;
+  }
 }
 
 .footer {
@@ -129,6 +144,7 @@ button {
 }
 
 .logs {
+  width: 1000px;
   .log {
     button {
       color: #ffffff;
@@ -147,6 +163,12 @@ button {
 }
 
 .comments {
+  width: 1000px;
+
+  @media (min-width: 1500px) {
+    width: 400px;
+  }
+
   .comment {
     font-size: 20px;
 
