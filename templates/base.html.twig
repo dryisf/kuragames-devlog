@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <title>{% block title %}KURAGAMES GAMEDEVLOG{% endblock %}</title>
     {% block stylesheets %}
-    {{
-      encore_entry_link_tags("app")
-    }}
+    {{ encore_entry_link_tags("app") }}
     {% endblock %}
   </head>
 
@@ -78,6 +76,12 @@
             {% endif %}
           </ul>
           <div class="social p-2 text-center ml-auto">
+          <a
+              class="px-2"
+              href="https://store.steampowered.com/app/1911650/Kurama_and_The_Cursed_Isles"
+              target="_blank"
+              ><img src="{{ asset('build/images/steamlogo.png') }}" alt=""
+            /></a>
             <a
               class="px-2"
               href="https://www.facebook.com/kuragames"
