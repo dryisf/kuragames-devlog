@@ -67,7 +67,7 @@
         Comment section
       </div>
 
-      {{ form_start(formComment) }}
+      {# {{ form_start(formComment) }}
 
       <div class="form-group">
         {% if app.user %}
@@ -88,7 +88,7 @@
       <button type="submit" class="bold">
         POST
       </button>
-      {{ form_end(formComment) }}
+      {{ form_end(formComment) }} #}
     </div>
     {% for comment in comments %}
     <div class="comment mt-4 {% if comment.isVerified %}is-verified{% endif %}">
