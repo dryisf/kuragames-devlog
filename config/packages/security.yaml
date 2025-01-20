@@ -8,7 +8,7 @@ security:
       memory:
         users:
           adel.issoufi@gmail.com:
-            password: $2y$13$SHdx5Usln2GGMrScxKTDpOh3KqmG7c9eq9rMiwurALCsjcpg2MSN6
+            password: "%env(USER_PASSWORD)%"
             roles: "ROLE_ADMIN"
   firewalls:
     dev:
